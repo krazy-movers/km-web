@@ -133,6 +133,15 @@ footer p {
   }
 }
 
+/* Form */
+form.inquiry_form {
+  display: table;
+}
+
+div.inquiry_form {
+  display: table-row;
+}
+
 /* Accessibility improvements */
 /*
 a:focus,
