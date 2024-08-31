@@ -5,6 +5,12 @@
     <title>Krazy Movers</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
+    <!-- ページ幅をデバイスの画面サイズと一致させる -->
+    <meta name="viewport" content="width=device-width" />
+    <!-- 電話番号自動認識オフ -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- モバイル端末ホームアイコン -->
+    <link rel="icon" sizes="192x192" href="img/apple-touch-icon.png" />
     <link href="style.css" rel="stylesheet" media="all" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,7 +20,36 @@
     />
   </head>
   <body>
-    <header></header>
-    <footer>© 2019 Krazy Movers</footer>
+    <header>
+      <p id="km">Krazy Movers</p>
+      <menu id="menu">
+        <a href="#about">我々について</a>
+        <a href="#activity">活動内容</a>
+        <a href="#inquiry">お問い合わせ</a>
+      </menu>
+    </header>
+    <h1 id="about">我々について</h1>
+    <p>
+      大学の同期のITエンジニア達が、ITや趣味の旅行を通じた各地のグルメや旅館などについてもお伝えし、
+      <br />読者の皆様に有益な情報源となれるように精進して参るつもりで更新していたブログでした。
+    </p>
+    <h1 id="activity">活動内容</h1>
+    <ul>
+      <li>コンピュータネットワーク勉強会</li>
+      <li>EVの限界に挑戦するドライブ</li>
+    </ul>
+    <h1 id="inquiry">お問い合わせ</h1>
+    <!--
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSfy_qwFcEbTDVREtMe5D_gM-ywk-zhaBQZ7g2FdoDJwv2XH6Q/viewform?embedded=true"
+      width="640"
+      height="1059"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      >読み込んでいます…</iframe
+    >
+  -->
+    <footer><p>© 2019 Krazy Movers</p></footer>
   </body>
 </html>
