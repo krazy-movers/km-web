@@ -18,9 +18,8 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <script type="text/javascript">
-      let submitted = false;
-    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="script.js"></script>
     <iframe
       name="hidden_iframe"
       id="hidden_iframe"
@@ -38,12 +37,8 @@
       </menu>
     </header>
     <h1 id="about">我々について</h1>
-    <p>
-      大阪の某大学の同期のITエンジニア達が、ITや旅行を通じて交流を深めるグループです。
-    </p>
-    <p>
-      以前は、ブログ形式でITに関する書き物や旅先で見つけた各地のグルメなどを紹介していました。
-    </p>
+    <p>大阪の某大学の同期のITエンジニア達が、ITや旅行を通じて交流を深めるグループです。</p>
+    <p>以前は、ブログ形式でITに関する書き物や旅先で見つけた各地のグルメなどを紹介していました。</p>
 
     <h1 id="activity">活動内容</h1>
     <ul>
@@ -60,12 +55,11 @@
       class="inquiry_form"
       target="hidden_iframe"
       onsubmit="submitted=true"
+      id="inquiry-form"
     >
       <div class="Form">
         <div class="Form-Item-Top">
-          <p class="Form-Item-Label">
-            <span class="Form-Item-Label-Required">必須</span>お名前
-          </p>
+          <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>お名前</p>
           <input
             type="text"
             class="Form-Item-Input"
@@ -89,28 +83,31 @@
         </div>
 
         <div class="Form-Item">
-          <p class="Form-Item-Label">
-            <span class="Form-Item-Label-Required">必須</span>件名
-          </p>
-          <input
-            type="text"
-            class="Form-Item-Input"
-            name="entry.60315865"
-            required
-          />
+          <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>件名</p>
+          <input type="text" class="Form-Item-Input" name="entry.60315865" required />
         </div>
 
         <div class="Form-Item">
           <p class="Form-Item-Label isMsg">
             <span class="Form-Item-Label-Required">必須</span>お問い合わせ内容
           </p>
-          <textarea
-            class="Form-Item-Textarea"
-            name="entry.1003404269"
-            required
-          ></textarea>
+          <textarea class="Form-Item-Textarea" name="entry.1003404269" required></textarea>
         </div>
-        <input type="submit" class="Form-Btn" value="送信する" />
+        <div
+          class="g-recaptcha recaptcha"
+          data-callback="onRecaptchaSuccess"
+          data-expired-callback="onRecaptchaExpired"
+          data-sitekey="6LclzWwqAAAAAKflpotdOsO3W0knxkbW7TQYg8XR"
+        ></div>
+        <button
+          id="submit-button"
+          class="Form-Btn"
+          data-sitekey="6LclzWwqAAAAAKflpotdOsO3W0knxkbW7TQYg8XR"
+          data-callback="onSubmit"
+          data-action="submit"
+        >
+          送信する
+        </button>
       </div>
     </form>
 
