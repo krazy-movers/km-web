@@ -18,14 +18,14 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcmPnMqAAAAAGqRReD710SZAqR7gcfcL0YJ4uOX"></script>
     <script src="script.js"></script>
-    <iframe
+    <!-- <iframe
       name="hidden_iframe"
       id="hidden_iframe"
       style="display: none"
       onload="if(submitted){window.location='./thanks.html'}"
-    ></iframe>
+    ></iframe> -->
   </head>
   <body>
     <header>
@@ -54,7 +54,7 @@
       method="POST"
       class="inquiry_form"
       target="hidden_iframe"
-      onsubmit="submitted=true"
+      onsubmit="event.preventDefault(); sendForm();"
       id="inquiry-form"
     >
       <div class="Form">
@@ -75,7 +75,7 @@
           </p>
           <input
             type="email"
-            name="entry.1645467468"
+            name="emailAddress"
             required
             class="Form-Item-Input"
             placeholder="例）example@gmail.com"
@@ -93,23 +93,11 @@
           </p>
           <textarea class="Form-Item-Textarea" name="entry.1003404269" required></textarea>
         </div>
-        <div
-          class="g-recaptcha recaptcha"
-          data-callback="onRecaptchaSuccess"
-          data-expired-callback="onRecaptchaExpired"
-          data-sitekey="6LclzWwqAAAAAKflpotdOsO3W0knxkbW7TQYg8XR"
-        ></div>
-        <button
-          id="submit-button"
-          class="Form-Btn"
-          data-sitekey="6LclzWwqAAAAAKflpotdOsO3W0knxkbW7TQYg8XR"
-          data-callback="onSubmit"
-          data-action="submit"
-        >
-          送信する
-        </button>
+        <input type="submit" class="Form-Btn" value="送信する" />
       </div>
     </form>
+
+    <div id="message"></div>
 
     <footer><p>© 2019 Krazy Movers</p></footer>
   </body>
