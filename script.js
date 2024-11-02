@@ -35,15 +35,19 @@ async function sendForm() {
     return;
   }
 
-  // // レスポンスを受け取り、画面に表示
-  // messageElement.textContent = await req.text();
-  const response = await req;
-  if (response.ok) {
-    window.location.href = './thanks.html';
-  } else {
-    messageElement.textContent = await req.text();
-  }
-
   // 送信ボタンを有効化
   submitBtnElement.disabled = false;
+
+  // ステータスコードをチェック
+  if (!req.ok) {
+    // エラー処理
+    messageElement.textContent = await req.text();
+    return;
+  }
+
+  // メッセージをクリア
+  messageElement.textContent = '';
+
+  // サンクスページへリダイレクト
+  window.location.href = './thanks.html';
 }
