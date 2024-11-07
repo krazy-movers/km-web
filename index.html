@@ -18,15 +18,8 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <script type="text/javascript">
-      let submitted = false;
-    </script>
-    <iframe
-      name="hidden_iframe"
-      id="hidden_iframe"
-      style="display: none"
-      onload="if(submitted){window.location='./thanks.html'}"
-    ></iframe>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcmPnMqAAAAAGqRReD710SZAqR7gcfcL0YJ4uOX"></script>
+    <script src="script.js"></script>
   </head>
   <body>
     <header>
@@ -52,26 +45,17 @@
     </ul>
 
     <h1 id="inquiry">お問い合わせ</h1>
-    <p>
-      <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSfy_qwFcEbTDVREtMe5D_gM-ywk-zhaBQZ7g2FdoDJwv2XH6Q/viewform?usp=sf_link"
-        >こちら</a
-      >のGoogle フォームからお送りください。
-    </p>
-    <!--
     <form
       autocomplete="off"
       action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfy_qwFcEbTDVREtMe5D_gM-ywk-zhaBQZ7g2FdoDJwv2XH6Q/formResponse"
       method="POST"
       class="inquiry_form"
-      target="hidden_iframe"
-      onsubmit="submitted=true"
+      onsubmit="event.preventDefault(); sendForm();"
+      id="inquiry-form"
     >
       <div class="Form">
         <div class="Form-Item-Top">
-          <p class="Form-Item-Label">
-            <span class="Form-Item-Label-Required">必須</span>お名前
-          </p>
+          <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>お名前</p>
           <input
             type="text"
             class="Form-Item-Input"
@@ -87,7 +71,7 @@
           </p>
           <input
             type="email"
-            name="entry.***"
+            name="emailAddress"
             required
             class="Form-Item-Input"
             placeholder="例）example@gmail.com"
@@ -95,31 +79,20 @@
         </div>
 
         <div class="Form-Item">
-          <p class="Form-Item-Label">
-            <span class="Form-Item-Label-Required">必須</span>件名
-          </p>
-          <input
-            type="text"
-            class="Form-Item-Input"
-            name="entry.60315865"
-            required
-          />
+          <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>件名</p>
+          <input type="text" class="Form-Item-Input" name="entry.60315865" required />
         </div>
 
         <div class="Form-Item">
           <p class="Form-Item-Label isMsg">
             <span class="Form-Item-Label-Required">必須</span>お問い合わせ内容
           </p>
-          <textarea
-            class="Form-Item-Textarea"
-            name="entry.1003404269"
-            required
-          ></textarea>
+          <textarea class="Form-Item-Textarea" name="entry.1003404269" required></textarea>
         </div>
         <input type="submit" class="Form-Btn" value="送信する" />
+        <div id="message"></div>
       </div>
     </form>
-    -->
 
     <footer><p>© 2019 Krazy Movers</p></footer>
   </body>
