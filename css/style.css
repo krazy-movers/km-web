@@ -98,6 +98,11 @@ ul li:hover {
   transform: translateX(10px);
 }
 
+ul a {
+  color: #a9cce3;
+  text-decoration: none;
+}
+
 /* Footer styles */
 footer {
   text-align: center;
