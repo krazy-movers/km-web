@@ -27,6 +27,7 @@
       <menu id="menu">
         <a href="#about">我々について</a>
         <a href="#activity">活動内容</a>
+        <a href="#link">リンク</a>
         <a href="#inquiry">お問い合わせ</a>
       </menu>
     </header>
@@ -44,6 +45,17 @@
       <li>EVの限界に挑戦するドライブ</li>
     </ul>
 
+    <h1 id="link">リンク</h1>
+    <ul>
+      <li>
+        <a href="https://note.com/krazy_movers">note</a>
+        旧ブログに掲載していた一部コンテンツを加筆修正のうえ掲載
+      </li>
+      <li>
+        <a href="https://x.com/Krazy_Movers">X (formerly Twitter)</a>
+      </li>
+    </ul>
+
     <h1 id="inquiry">お問い合わせ</h1>
     <form
       autocomplete="off"
@@ -54,7 +66,9 @@
     >
       <div class="Form">
         <div class="Form-Item-Top">
-          <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>お名前</p>
+          <p class="Form-Item-Label">
+            <span class="Form-Item-Label-Required">必須</span>お名前
+          </p>
           <input
             type="text"
             class="Form-Item-Input"
@@ -78,15 +92,26 @@
         </div>
 
         <div class="Form-Item">
-          <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>件名</p>
-          <input type="text" class="Form-Item-Input" name="entry.60315865" required />
+          <p class="Form-Item-Label">
+            <span class="Form-Item-Label-Required">必須</span>件名
+          </p>
+          <input
+            type="text"
+            class="Form-Item-Input"
+            name="entry.60315865"
+            required
+          />
         </div>
 
         <div class="Form-Item">
           <p class="Form-Item-Label isMsg">
             <span class="Form-Item-Label-Required">必須</span>お問い合わせ内容
           </p>
-          <textarea class="Form-Item-Textarea" name="entry.1003404269" required></textarea>
+          <textarea
+            class="Form-Item-Textarea"
+            name="entry.1003404269"
+            required
+          ></textarea>
         </div>
         <input type="submit" class="Form-Btn" value="送信する" />
         <div id="message"></div>
